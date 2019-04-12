@@ -1,0 +1,43 @@
+<form (ngSubmit)="addCustomer(f)" #f="ngForm">
+  <div class="form-group">
+    <label for="name_">Name</label>
+    <input name="name_"
+           name_
+           #Name="ngModel"
+           required
+           [ngModel]="customer.name"
+           type="text"
+           class="form-control"
+           id="name_"
+           placeholder="Name">
+    <div *ngIf="Name.errors  && f.submitted && !isValidFormSubmitted" class="alert alert-danger">
+      <div *ngIf="Name.errors.required">
+        Name is required!
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="email">Email address</label>
+    <input
+            type="text"
+            name="email"
+            id="email"
+            [ngModel]="customer.email"
+            required
+            email
+            #Email="ngModel"
+            class="form-control"
+            placeholder="Email">
+    <div *ngIf="Email.errors && f.submitted && !isValidFormSubmitted" class="alert alert-danger">
+      <div *ngIf="Email.errors.email">
+         Email not valid.
+      </div>
+      <div *ngIf="Email.errors.required">
+        Email is required!
+      </div>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary"  >Submit</button>
+</form>
+
+<ngx-spinner></ngx-spinner>

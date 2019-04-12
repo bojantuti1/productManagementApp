@@ -1,0 +1,21 @@
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Name</th>
+    <th scope="col">Email</th>
+    <th scope="col">Products</th>
+    <th scope="col"><button  class="btn_class" mat-button (click)="newCustomer()">Add New Customer</button></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let customer of customers">
+    <th scope="row"></th>
+    <td>{{ customer.name }}</td>
+    <td>{{ customer.email }}</td>
+    <td *ngIf="customer.products.length > 0"><small *ngFor="let product of customer.products">{{ product.name }} <br></small></td>
+    <td *ngIf="customer.products.length === 0">No products available!</td>
+    <td></td>
+  </tr>
+  </tbody>
+</table>
