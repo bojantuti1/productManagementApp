@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "postinstall": "cd product-management-app && ng build --prod",
+    "postinstall": "cd product-management-app && ng build --aot --prod",
     "deploy": "git push origin master && git push heroku master"
   },
   "private": true,
@@ -56,6 +56,6 @@
   },
   "engines": {
     "node": "8.10.0",
-    "npm": "3.10.9"
+    "npm": "6.9.0"
   }
 }
