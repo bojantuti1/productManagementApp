@@ -1,4 +1,4 @@
-<form (ngSubmit)="addCustomer(f)" #f="ngForm">
+<form (ngSubmit)="addCustomer(f)" #f="ngForm" class="form">
   <div class="form-group">
     <label for="name_">Name</label>
     <input name="name_"
@@ -37,7 +37,7 @@
       </div>
     </div>
   </div>
-  <button type="submit" class="btn btn-primary"  >Submit</button>
+  <button type="submit" class="btn btn-primary"  >Add Customer</button>
 </form>
 
 <ngx-spinner></ngx-spinner>

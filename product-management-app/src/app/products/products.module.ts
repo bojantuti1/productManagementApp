@@ -9,22 +9,25 @@ import {MatButtonModule, MatCheckboxModule} from "@angular/material";
 import {ProductsRoutingModule} from "./products-routing.module";
 import {ProductsService} from "../services/products.service";
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { SharedModule } from "../shared/shared.module";
 
 @NgModule({
     declarations: [
-        ProductsComponent
+        ProductsComponent,
+
     ],
     imports: [
         CommonModule,
         ProductsRoutingModule,
+        SharedModule,
         MatTabsModule,
         MatGridListModule,
         MatListModule,
         MatCardModule,
-        MatTabsModule,
         MatButtonModule,
         MatCheckboxModule,
         NgxSpinnerModule
+
     ],
     providers: [ProductsService]
 })

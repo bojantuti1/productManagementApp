@@ -8,10 +8,11 @@ import { NgxSpinnerService } from 'ngx-spinner';
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
-  styleUrls: ['./products.component.css']
+  styleUrls: ['./products.component.css'],
 })
 export class ProductsComponent implements OnInit {
   products: ProductModel[] = [];
+  tableKeys: string[];
   subscription: Subscription;
 
   constructor(
@@ -21,6 +22,7 @@ export class ProductsComponent implements OnInit {
 
   ngOnInit() {
     this.products = this.productsService.getProducts();
+    this.tableKeys = ['id', 'name', 'price'];
   }
 
   deleteProduct(id){
@@ -39,8 +41,10 @@ export class ProductsComponent implements OnInit {
           console.log('Received an errror: ' + error)
           this.subscription.unsubscribe();
         });
-
-
   }
+
+    trackByFn(index, item) {
+        return item.id;
+    }
 
 }

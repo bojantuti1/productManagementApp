@@ -44,7 +44,6 @@ export class NewCustomerComponent implements OnInit {
       email: value.email,
       products: []
     };
-    console.log('customerService', customer);
 
     this.subscription = this.customerService.createCustomer(customer).subscribe(
         (customerData: string) => {
