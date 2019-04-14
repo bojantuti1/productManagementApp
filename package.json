@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "node server.js",
+    "start": "cd product-management-app && node server.js",
     "build": "cd product-management-app && ng build",
     "test": "ng test",
     "lint": "ng lint",
